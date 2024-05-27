@@ -143,7 +143,23 @@ The quadrotor's dynamics are described by the following state-space equations, w
 - Positions in the inertial frame: $$\( x, y, z \)$$ 
 - Roll, pitch, and yaw angles: $$\( \phi, \theta, \psi \)$$ 
 - Velocities in the inertial frame: $$\( \dot{x}, \dot{y}, \dot{z} \)$$ 
-- Angular velocities: $$\( \dot{\phi}, \dot{\theta}, \dot{\psi} \)$$ 
+- Angular velocities: $$\( \dot{\phi}, \dot{\theta}, \dot{\psi} \)$$
+
+
+
+# Setup explicit ode equations
+\[\dot{px} = vx\]
+\[\dot{py} = vy\]
+\[\dot{pz} = vz\]
+\[\dot{vx} = vdot[0]\]
+\[\dot{vy} = vdot[1]\]
+\[\dot{vz} = vdot[2]\]
+\[\dot{roll} = \frac{(roll_c - roll)}{\tau}\]
+\[\dot{pitch} = \frac{(pitch_c - pitch)}{\tau}\]
+\[\dot{yaw} = \frac{(yaw_c - yaw)}{\tau}\]
+# vector function of explicit dynamics
+\[f_{expl} = \begin{bmatrix} \dot{px} \\ \dot{py} \\ \dot{pz} \\ \dot{vx} \\ \dot{vy} \\ \dot{vz} \\ \dot{roll} \\ \dot{pitch} \\ \dot{yaw} \end{bmatrix}\]
+
 
 #### Inputs
 - : Propeller speeds: $$\( u_1, u_2, u_3, u_4 \)$$
