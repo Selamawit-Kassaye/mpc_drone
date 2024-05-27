@@ -12,7 +12,7 @@
 7. [Directory Structure](#directory_struct)
 
 ## Overview <a id="overview"></a>
-In this project, we implement Nonlinear Model Predictive Control (NMPC) to achieve advanced control for quadrotor drones. Unlike traditional Linear MPC, NMPC can handle the nonlinear dynamics of quadrotors, making it a more suitable approach for high-precision and dynamic tasks such as drone racing.
+The project focuses on implementing a robust and efficient takeoff procedure for the Crazyflie quadrotor using Model Predictive Control (MPC). MPC is a powerful control strategy that optimizes control inputs over a future time horizon while considering system dynamics and constraints. This approach ensures that the drone can take off smoothly and safely while maintaining stability and adhering to predefined constraints.
 
 ### Why NMPC?
 
@@ -29,7 +29,7 @@ Quadrotors exhibit highly nonlinear behavior, especially when performing aggress
 - **Flexibility and Robustness**: NMPC can adapt to various flight conditions and disturbances, making it a robust solution for real-world applications.
 
 **Team Members:**
-Lavanya Ratnabala, 
+Lavanya Ratnabala 
 Selamawit Asfaw
 
 
