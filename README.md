@@ -14,34 +14,18 @@
 ## Overview <a id="overview"></a>
 The project focuses on implementing a robust and efficient takeoff procedure for the Crazyflie quadrotor using Model Predictive Control (MPC). MPC is a powerful control strategy that optimizes control inputs over a future time horizon while considering system dynamics and constraints. This approach ensures that the drone can take off smoothly and safely while maintaining stability and adhering to predefined constraints.
 
-### Why NMPC?
-
-Quadrotors exhibit highly nonlinear behavior, especially when performing aggressive maneuvers or flying in environments with obstacles. NMPC is designed to optimize control actions by solving a nonlinear programming (NLP) problem at each time step, which allows for:
-
-- **Accurate Trajectory Tracking**: Ensuring the quadrotor follows the desired path with high precision.
-- **Obstacle Avoidance**: Dynamically adjusting the trajectory to avoid collisions.
-- **Rapid Point Stabilization**: Quickly stabilizing the quadrotor at specific points, which is crucial in tasks like passing through gates in drone racing.
-
-### Key Features
-
-- **Nonlinear Dynamics Handling**: Unlike Linear MPC, NMPC can directly incorporate the nonlinear equations of motion of the quadrotor, providing more accurate control.
-- **Optimization-Based Control**: Using NLP wtih CasADi, the controller optimizes future control actions over a prediction horizon, considering both the current state and future states of the quadrotor.
-- **Flexibility and Robustness**: NMPC can adapt to various flight conditions and disturbances, making it a robust solution for real-world applications.
-
 **Team Members:**
 Lavanya Ratnabala 
 Selamawit Asfaw
 
 
-**Presentation:** [MPC Drones Final Presentation Link](https://drive.google.com/drive/folders/1E5tKipE3HwYkDtr1KWob1nK1J_9sDaNs?usp=drive_link)
+**Presentation:** [From Ground to Air: Crazyflie Drone Takeoff with Model Predictive Control](https://docs.google.com/presentation/d/1lm82zUs13wzlbzYoQ151rFkZ4N4f6DnRfFaLImc0srU/edit#slide=id.p4)
 
-## Problem Statement <a id="problem_statement"></a>
-The primary objective of this project is to develop a control system for fully non-linear quadrotor system that can achieve following tasks:
-- Fast point stabilization 
-- Follow trajectory to pass through gates precisely
-- Avoid obstacles using state constraints
-  
-Quadrotors are widely used in various applications such as aerial photography, surveillance, delivery services and sports such as drone racing. However, their nonlinear dynamics and the presence of external disturbances make control a challenging task.
+## Motivation
+In the last decade, drones have gained immense popularity, revolutionizing sectors like agriculture, surveillance, delivery, and entertainment with their efficiency, precision, and automation. However  takeoff phase involves complex dynamics due to the interactions between the UAV’s propulsion system and environmental factors like wind and turbulence.  Improper takeoff can lead to crashes or unstable flight paths, posing safety risks to nearby people and structures and potential mission failure.
+
+## Problem Statement and solution <a id="problem_statement and solution"></a>
+Traditional control methods like PID controllers often struggle with the precision and proactive adjustments required during the takeoff phase of drone flights, particularly in handling dynamic external forces such as wind and turbulence. These forces can introduce instabilities that reactive control systems cannot effectively anticipate, leading to potential safety risks and inefficiencies. Implementing Model Predictive Control (MPC) for the Crazyflie drone's takeoff phase enhances stability and accuracy by using a dynamic model to predict future states and adjust controls in real-time. This proactive approach allows the system to anticipate and mitigate the effects of external disturbances, optimizing control inputs within the drone's operational constraints. Consequently, MPC ensures a safer, more reliable, and efficient takeoff, overcoming the limitations of traditional reactive control methods.
 
 ### Importance
 The project explores the application of MPC for trajectory tracking and obstacle avoidance while passing through gates, highlighting its potential for enhancing performance in this intense sport. The insights gained pave the way for future innovations, offering the potential to revolutionize drone racing with cutting-edge algorithms and strategies. Additionally, addressing the nonlinear dynamics and external disturbances inherent in quadrotor systems is vital for ensuring safe and reliable operation in real-world scenarios. This project emphasizes the importance of MPC in overcoming these challenges, setting the stage for future advancements in drone racing technology.
