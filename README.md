@@ -90,34 +90,44 @@ Follow these steps to set up and run the project on your local machine.
     python mpc_drone_obstacle_avoid.py
     ```
 
-### Tuning of Parameters
-In order to tune or change control and system parameters in any python file, access the parameters in each file such as:
+### System Dynamics
+# State Variiables
+    - Position 
+    - Velocity
+    - Altitude
+
+# Control Inputs
+    - thrust and torques
+
+
+
 
 #### Control and Dynamical parameters
 ```bash
 ...
-    T = 0.1                                 # sampling time [s]                        
-    N = 6                                   # prediction horizon (Final With Terminal Cost)                        
-    M_R = 0.065                             # kg, mass of rotor
-    R_R = 0.31                              # m, radius of rotor
-    Jr = 1/2 * M_R * R_R**2                 # inertia of rotor about COM
-    K1 = K2 = K3 = K4 = K5 = K6 = 0.2       # drag coefficient
-    m = 1.1                                 # mass of the quadrotor [kg]
-    g = 9.81                                # gravity [m/s^2]
-    Ix = 8.1*10**(-3)                       # moment of inertia about Bx axis [kg.m^2]
-    Iy =  8.1*10**(-3)                      # moment of inertia about By axis [kg.m^2]
-    Iz = 14.2*10**(-3)                      # moment of inertia about Bz axis [kg.m^2]
-    l = 0.17                                # quadrotor arm length [m]
-    b = 0.5                                 # thrust/lift coefficient [N.s^2]
-    d = 0.7                                 # scalling factor
+# Quadrotor Parameters
+    mass = 0.027#0.028
+    arm_length= 0.0397#0.044
+    Ixx= 1.4e-5#2.3951e-5
+    Iyy=1.4e-5#2.3951e-5
+    Izz=2.17e-5#3.2347e-5
+    cm=2.4e-6
+    tau= 0.08
+
+# MPC Parameters
+    mpc_tf = 1.0
+    mpc_N = 50
+    control_update_rate = 50
+    plot_trajectory = True
+                                 # scalling factor
 ...
 ```
 #### Cost Weights
 ```bash
 ...
-    Q = np.diag([1.2,1.2,1.2,1.2,1.2,1.2,1,1,1,1,1,1])             # weights for states
-    R = np.diag([0.01,0.01,0.01,0.01])                             # weights for inputs
-    Q_terminal = np.diag([5, 5, 5, 3, 3, 3, 1, 1, 1, 1, 1, 1])     # weights for terminal states
+   Q = np.diag([20., 20., 20., 2., 2., 2., 1., 1., 1.])   # state weighting matrix
+   R = diag(horzcat(1., 1., 1., 1.))                      # control input weighting matrix.
+   W = block_diag(Q,R)                                    # Combined Weighting Matrix 
 ...
 ```
 
