@@ -27,14 +27,16 @@ In the last decade, drones have gained immense popularity, revolutionizing secto
 ## Problem Statement and solution <a id="problem_statement and solution"></a>
 Traditional control methods like PID controllers often struggle with the precision and proactive adjustments required during the takeoff phase of drone flights, particularly in handling dynamic external forces such as wind and turbulence. These forces can introduce instabilities that reactive control systems cannot effectively anticipate, leading to potential safety risks and inefficiencies. Implementing Model Predictive Control (MPC) for the Crazyflie drone's takeoff phase enhances stability and accuracy by using a dynamic model to predict future states and adjust controls in real-time. This proactive approach allows the system to anticipate and mitigate the effects of external disturbances, optimizing control inputs within the drone's operational constraints. Consequently, MPC ensures a safer, more reliable, and efficient takeoff, overcoming the limitations of traditional reactive control methods.
 
-### Importance
-The project explores the application of MPC for trajectory tracking and obstacle avoidance while passing through gates, highlighting its potential for enhancing performance in this intense sport. The insights gained pave the way for future innovations, offering the potential to revolutionize drone racing with cutting-edge algorithms and strategies. Additionally, addressing the nonlinear dynamics and external disturbances inherent in quadrotor systems is vital for ensuring safe and reliable operation in real-world scenarios. This project emphasizes the importance of MPC in overcoming these challenges, setting the stage for future advancements in drone racing technology.
-
 ## Results <a id="results"></a>
-The implemented MPC controller successfully stabilizes the drone at the desired point and follows specified trajectories. The results include:
-- Response of MPC for single point stabilization
-- Stability in orientation and velocity for trajectory tracking.
-- Obstacle Avoidance 2D Animation
+The implemented MPC controller successfully worked on real drones using motion capture and VICON tracking stabilizes the drone at the desired takeoff point:
+
+- By leveraging MPC, the drone is able to proactively predict and achive the takesoff.
+  Additionally, the use of MPC reduces the occurrence of instabilities and enhances the safety and reliability of the takeoff 
+  process.
+- Empirical data shows a marked small deviation from the planned takeoff path and a more consistent achievement of desired altitude and orientation targets.
+
+
+
 
 ### Visual Aids
 The following plots illustrate the performance of the MPC controller:
