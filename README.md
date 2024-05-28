@@ -127,7 +127,7 @@ Follow these steps to set up and run the project on your local machine.
 ...
    Q = np.diag([20., 20., 20., 2., 2., 2., 1., 1., 1.])   # state weighting matrix
    R = diag(horzcat(1., 1., 1., 1.))                      # control input weighting matrix.
-   W = block_diag(Q,R)                                    # Combined Weighting Matrix 
+   Q_e = block_diag(Q,R)                                    # Combined Weighting Matrix 
 ...
 ```
 
